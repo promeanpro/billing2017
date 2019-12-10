@@ -1,0 +1,18 @@
+class_name: ApiTester
+modules:
+    enabled:
+        - Yii2
+        - \Helper\Api
+        - REST:
+            depends: Yii2
+            part: Json
+        - Asserts
+    config:
+        Yii2:
+            configFile: 'tests/config/api.php'
+            cleanup: false
+        \Helper\Api:
+            multiplier : 100000;
+            sourceUserId : 100;
+            targetUserId : 101
+            sleepTimeout : 1
